@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:x_clone_app/features/auth/views/Sign_up_view.dart';
 import 'package:x_clone_app/features/auth/views/login_view.dart';
 import 'package:x_clone_app/theme/appTheme.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'X_Clone',
       theme: AppTheme.theme,
-      home: const LoginView(),
+      home: const SignUpView(),
     );
   }
 }

@@ -8,6 +8,7 @@ class UIUtils {
   static AppBar appBar() {
     return AppBar(
       centerTitle: true,
+      automaticallyImplyLeading: false,
       title: SvgPicture.asset(
         AssetsConstants.ASSETS_SVG_X_SVG,
         colorFilter:

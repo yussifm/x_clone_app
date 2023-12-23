@@ -1,33 +1,32 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:x_clone_app/commonWidgets/common_rounded_sm_btn.dart';
-import 'package:x_clone_app/features/auth/views/Sign_up_view.dart';
+import 'package:x_clone_app/features/auth/views/login_view.dart';
 import 'package:x_clone_app/features/auth/widgets/auth_field.dart';
-import 'package:x_clone_app/theme/palette.dart';
+import 'package:x_clone_app/theme/theme.dart';
 import 'package:x_clone_app/utils/Ui_utils.dart';
 
-class LoginView extends StatefulWidget {
-  const LoginView({super.key});
+import '../../../commonWidgets/common_rounded_sm_btn.dart';
+
+class SignUpView extends StatefulWidget {
+  const SignUpView({super.key});
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<SignUpView> createState() => _SignUpViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
-  final appBar = UIUtils.appBar();
-  var emailTxtController = TextEditingController();
-  var passwordTxtController = TextEditingController();
-
-  @override
-  void dispose() {
-    emailTxtController.dispose();
-    passwordTxtController.dispose();
-    super.dispose();
-  }
-
+class _SignUpViewState extends State<SignUpView> {
   @override
   Widget build(BuildContext context) {
+    final appBar = UIUtils.appBar();
+    var emailTxtController = TextEditingController();
+    var passwordTxtController = TextEditingController();
 
+    @override
+    void dispose() {
+      emailTxtController.dispose();
+      passwordTxtController.dispose();
+      super.dispose();
+    }
 
     return Scaffold(
       appBar: appBar,
@@ -65,27 +64,26 @@ class _LoginViewState extends State<LoginView> {
                 ),
                 RichText(
                   text: TextSpan(
-                    text: "Don't have an account? ",
+                    text: "Already have an account? ",
                     style: const TextStyle(
                       fontSize: 16,
                       color: Palette.whiteColor,
                     ),
                     children: [
                       TextSpan(
-                        text: "Sign up",
+                        text: "Log in",
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const SignUpView(),
+                                builder: (context) => const LoginView(),
                               ),
                             );
                           },
                         style: const TextStyle(
                           fontSize: 16,
                           color: Palette.blueColor,
-                          
                         ),
                       ),
                     ],
@@ -97,8 +95,5 @@ class _LoginViewState extends State<LoginView> {
         ),
       ),
     );
- 
- 
- 
   }
 }
