@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:x_clone_app/features/auth/views/login_view.dart';
+import 'package:x_clone_app/theme/appTheme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'X_Clone',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: Text(""),
+      theme: AppTheme.theme,
+      home: const LoginView(),
     );
   }
 }
